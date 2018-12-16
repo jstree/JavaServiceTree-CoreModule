@@ -70,11 +70,15 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.0.2</version>
                 <configuration>
+                    <outputDirectory>${deploy.target.dir}</outputDirectory>
                     <archive>
                         <manifest>
+                            <!-- jar 파일 META-INF/MANIFEST.MF 에 클래스패스 정보 추가 -->
                             <addClasspath>true</addClasspath>
+                            <addExtensions>true</addExtensions>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
                     </archive>
                 </configuration>
