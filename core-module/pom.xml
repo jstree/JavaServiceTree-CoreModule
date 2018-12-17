@@ -7,7 +7,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>standard-project</artifactId>
-        <version>18.12.6</version>
+        <version>18.13.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>313devgrp</groupId>
             <artifactId>lib-module</artifactId>
-            <version>18.12.6</version>
+            <version>18.13.2</version>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -64,24 +64,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <outputDirectory>${deploy.target.dir}</outputDirectory>
-                    <archive>
-                        <manifest>
-                            <!-- jar 파일 META-INF/MANIFEST.MF 에 클래스패스 정보 추가 -->
-                            <addClasspath>true</addClasspath>
-                            <addExtensions>true</addExtensions>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            <classpathPrefix>lib/</classpathPrefix>
-                        </manifest>
-                    </archive>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.github.wvengen</groupId>

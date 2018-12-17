@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>313devgrp</groupId>
     <artifactId>standard-project</artifactId>
-    <version>18.12.6</version>
+    <version>18.13.2</version>
     <packaging>pom</packaging>
 
     <name>standard-project</name>
@@ -25,7 +25,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.version>18.12.5</project.version>
+        <project.version>18.13.2</project.version>
         <maven.build.timestamp.format>yyMMdd_HHmm</maven.build.timestamp.format>
         <build.time>${maven.build.timestamp}</build.time>
         <dependency.locations.enabled>false</dependency.locations.enabled>
