@@ -50,9 +50,9 @@
 		<property name="rememberMeServices" ref="rememberMeServices"/>
 	</bean>
 
-	<security:http pattern="/dwr/*" security="none"/>
+	<security:http pattern="/dwr/**" security="none"/>
 	<!-- Anyone can access these urls -->
-	<security:http pattern="/images/*" security="none"/>
+	<security:http pattern="/images/**" security="none"/>
 	<security:http pattern="/services/accessdenied" security="none"/>
 	<security:http pattern="/services/signup" security="none"/>
 	<security:http pattern="/services/user/register" security="none"/>
@@ -60,14 +60,14 @@
 	<security:http use-expressions="true" entry-point-ref="appAuthenticationEntryPoint">
 		<security:csrf/>
 
-		<security:intercept-url pattern="/api/rivalWar/ROLE_USER/*" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/api/rivalWar/ROLE_ADMIN/*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+		<security:intercept-url pattern="/api/rivalWar/ROLE_USER/**" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/api/rivalWar/ROLE_ADMIN/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 
-		<security:intercept-url pattern="/auth/*" access="permitAll"/>
+		<security:intercept-url pattern="/auth/**" access="permitAll"/>
 		<security:intercept-url pattern="/j_spring_security_check" access="permitAll"/>
 
 		<security:intercept-url pattern="/" access="isAuthenticated()"/>
-		<security:intercept-url pattern="/standard/project/web/src/main/resources/egovframework/egovProps" access="isAuthenticated()"/>
+		<!--security:intercept-url pattern="/standard/project/web/src/main/resources/egovframework/egovProps" access="isAuthenticated()"/-->
 
 		<!-- Adds social authentication filter to the Spring Security filter chain. -->
 		<security:custom-filter before="PRE_AUTH_FILTER" ref="socialAuthenticationFilter"/>
