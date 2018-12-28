@@ -5,7 +5,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>standard-project</artifactId>
-        <version>18.13.14</version>
+        <version>18.13.15</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
