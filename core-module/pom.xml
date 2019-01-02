@@ -7,7 +7,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>standard-project</artifactId>
-        <version>19.01.01</version>
+        <version>19.01.02</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>313devgrp</groupId>
             <artifactId>lib-module</artifactId>
-            <version>19.01.01</version>
+            <version>19.01.02</version>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -51,14 +51,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.1</version>
-                <configuration>
-                    <transformers>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ComponentsXmlResourceTransformer"/>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
-                            <resource>*.xml</resource>
-                        </transformer>
-                    </transformers>
-                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
