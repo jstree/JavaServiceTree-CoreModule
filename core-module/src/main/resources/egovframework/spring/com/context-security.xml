@@ -67,7 +67,7 @@
 		<security:intercept-url pattern="/j_spring_security_check" access="permitAll"/>
 
 		<security:intercept-url pattern="/" access="isAuthenticated()"/>
-		<!--security:intercept-url pattern="/standard/project/web/src/main/resources/egovframework/egovProps" access="isAuthenticated()"/-->
+		<security:intercept-url pattern="/standard/project/web/src/main/resources/egovframework/egovProps" access="isAuthenticated()"/>
 
 		<!-- Adds social authentication filter to the Spring Security filter chain. -->
 		<security:custom-filter before="PRE_AUTH_FILTER" ref="socialAuthenticationFilter"/>
