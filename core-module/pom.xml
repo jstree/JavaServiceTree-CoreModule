@@ -7,7 +7,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>standard-project</artifactId>
-        <version>19.01.179</version>
+        <version>19.01.185</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>313devgrp</groupId>
             <artifactId>lib-module</artifactId>
-            <version>19.01.179</version>
+            <version>19.01.185</version>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -89,19 +89,6 @@
                         <phase>compile</phase>
                         <goals>
                             <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
                         </goals>
                     </execution>
                 </executions>
