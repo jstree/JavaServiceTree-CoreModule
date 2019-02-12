@@ -166,9 +166,9 @@ public class JsTreeHibernateController extends GenericAbstractController {
     @RequestMapping(value = "/alterNode.do")
     public ModelAndView alterNode(@Validated(value = AlterNode.class) JsTreeHibernateDTO jsTreeHibernateDTO,
                                   BindingResult bindingResult, ModelMap model) throws Exception {
-        //if (bindingResult.hasErrors()) {
-        //    throw new RuntimeException();
-        //}
+        if (bindingResult.hasErrors()) {
+            throw new RuntimeException();
+        }
 
         jsTreeHibernateDTO.setC_title(Util_TitleChecker.StringReplace(jsTreeHibernateDTO.getC_title()));
 
@@ -184,8 +184,9 @@ public class JsTreeHibernateController extends GenericAbstractController {
     @RequestMapping(value = "/alterNodeType.do", method = RequestMethod.POST)
     public ModelAndView alterNodeType(@Validated(value = AlterNodeType.class) JsTreeHibernateDTO jsTreeHibernateDTO,
                                       BindingResult bindingResult, ModelMap model) throws Exception {
-        if (bindingResult.hasErrors())
+        if (bindingResult.hasErrors()) {
             throw new RuntimeException();
+        }
 
         jsTreeHibernateService.alterNodeType(jsTreeHibernateDTO);
         setJsonDefaultSetting(jsTreeHibernateDTO);
