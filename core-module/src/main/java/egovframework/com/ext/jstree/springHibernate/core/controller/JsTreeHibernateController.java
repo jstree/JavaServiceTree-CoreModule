@@ -164,10 +164,11 @@ public class JsTreeHibernateController extends GenericAbstractController {
 
     @ResponseBody
     @RequestMapping(value = "/alterNode.do")
-    public ModelAndView alterNode(JsTreeHibernateDTO jsTreeHibernateDTO, BindingResult bindingResult, ModelMap model) throws Exception {
-        if (bindingResult.hasErrors()) {
-            throw new RuntimeException();
-        }
+    public ModelAndView alterNode(@Validated(value = AlterNode.class) JsTreeHibernateDTO jsTreeHibernateDTO,
+                                  BindingResult bindingResult, ModelMap model) throws Exception {
+        //if (bindingResult.hasErrors()) {
+        //    throw new RuntimeException();
+        //}
 
         jsTreeHibernateDTO.setC_title(Util_TitleChecker.StringReplace(jsTreeHibernateDTO.getC_title()));
 
