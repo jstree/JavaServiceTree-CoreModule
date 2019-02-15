@@ -60,8 +60,8 @@
 	<security:http use-expressions="true" entry-point-ref="appAuthenticationEntryPoint">
 		<security:csrf/>
 
-		<security:intercept-url pattern="/api/rivalWar/ROLE_USER/**" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/api/rivalWar/ROLE_ADMIN/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+		<security:intercept-url pattern="/api/ROLE_USER/**" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/api/ROLE_ADMIN/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 
 		<security:intercept-url pattern="/auth/**" access="permitAll"/>
 		<security:intercept-url pattern="/j_spring_security_check" access="permitAll"/>
