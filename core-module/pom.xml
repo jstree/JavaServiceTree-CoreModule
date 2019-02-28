@@ -7,14 +7,13 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>${jsTree.Service.Framework.Version}</version>
+        <version>19.02.10</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>core-module</artifactId>
     <packaging>jar</packaging>
     <name>core-module</name>
-    <version>${jsTree.Service.Framework.Version}</version>
     <description>Core Project by 313 DEV GRP</description>
 
     <dependencyManagement>
@@ -32,7 +31,7 @@
         <dependency>
             <groupId>313devgrp</groupId>
             <artifactId>lib-module</artifactId>
-            <version>${jsTree.Service.Framework.Version}</version>
+            <version>19.02.10</version>
             <type>pom</type>
         </dependency>
         <dependency>
