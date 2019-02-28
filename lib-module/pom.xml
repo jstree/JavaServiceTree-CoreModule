@@ -12,6 +12,7 @@
     <artifactId>lib-module</artifactId>
     <packaging>pom</packaging>
     <name>lib-module</name>
+    <version>${jsTree.Service.Framework.Version}</version>
     <description>server by 313 DEV GRP</description>
 
     <properties>

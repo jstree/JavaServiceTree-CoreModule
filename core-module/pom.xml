@@ -14,6 +14,7 @@
     <artifactId>core-module</artifactId>
     <packaging>jar</packaging>
     <name>core-module</name>
+    <version>${jsTree.Service.Framework.Version}</version>
     <description>Core Project by 313 DEV GRP</description>
 
     <dependencyManagement>
