@@ -5,7 +5,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>19.04.04</version>
+        <version>19.04.05</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -354,6 +354,12 @@
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>batik-ext</artifactId>
             <version>1.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
         </dependency>
 
         <!-- ******************************************* DWR ******************************************* -->
