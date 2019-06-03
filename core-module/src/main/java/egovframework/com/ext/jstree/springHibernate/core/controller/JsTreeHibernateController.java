@@ -1,28 +1,12 @@
 /**
- * Modification Information
- *
  * @author 이동민
  * @since 2014.07.28
  * @version 1.0
  * @see <pre>
- *
- * Class Name 	: JsTreeHibernateController.java
- * Description 	: JSTree의 하위 node의 정보를 가져오는 actionController 클래스
- * Infomation	:
- *
- * jstree의 하위 node의 정보를 가져온다.
- *
- *  << 개정이력(Modification Information) >>
- *
- *  수정일         수정자             수정내용
- *  -------      ------------   -----------------------
- *  2014.07.28    Dongmin.Lee      최초 생성
- *
  *  Copyright (C) 2007 by 313 DEV GRP, Inc - All Rights Reserved
  *  Unauthorized copying of this file, via any medium is strictly prohibited
  *  Proprietary and confidential
  *  Written by 313 developer group <313@313.co.kr>, December 2010
- *
  * </pre>
  * */
 package egovframework.com.ext.jstree.springHibernate.core.controller;
@@ -59,12 +43,6 @@ public class JsTreeHibernateController extends GenericAbstractController {
     @Autowired
     @Qualifier("JsTreeHibernateService")
     private JsTreeHibernateService jsTreeHibernateService;
-
-    @IncludedInfo(name = "Spring-Hibernate Ver.", listUrl = "/com/ext/jstree/springHibernate/core/getJsTreeView.do", order = 3360, gid = 313)
-    @RequestMapping("/getJsTreeView.do")
-    public String jsTreeSpringHibernate() {
-        return "egovframework/com/ext/jstree/springHibernateVersion";
-    }
 
     @ResponseBody
     @RequestMapping(value = "/getChildNode.do", method = RequestMethod.GET)

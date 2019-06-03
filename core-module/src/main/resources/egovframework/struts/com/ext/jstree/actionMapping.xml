@@ -25,13 +25,6 @@
 		<default-interceptor-ref name="defaultStack" />
 		<default-action-ref name="www313cokrStrutsDefaultAction" />
 		
-		<action name="getJsTreeView"
-			class="egovframework.com.ext.jstree.strutsiBatis.core.actionController.CoreController">
-			<interceptor-ref name="defaultStack" />
-			<interceptor-ref name="myStack" />
-			<result>/WEB-INF/jsp/egovframework/com/ext/jstree/strutsiBatisVersion.jsp</result>
-		</action>
-
 		<action name="getChildNode"
 			class="egovframework.com.ext.jstree.strutsiBatis.core.actionController.C_GetChildNode">
 			<interceptor-ref name="defaultStack" />

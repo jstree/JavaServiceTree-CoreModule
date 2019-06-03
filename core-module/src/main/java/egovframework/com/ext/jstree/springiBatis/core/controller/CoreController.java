@@ -38,30 +38,6 @@ public class CoreController extends GenericAbstractController{
 	@Resource(name = "CoreService")
 	CoreService coreService;
 	
-	@IncludedInfo(name = "Struts-iBatis Ver.", listUrl = "/com/ext/jstree/strutsiBatis/core/getJsTreeView.action", order = 3310, gid = 313)
-	@RequestMapping("/strutsiBatis.do")
-	public String jsTreeStrutsiBatis() {
-		return "for struts iBatis annotation instead of controller";
-	}
-	
-	@IncludedInfo(name = "Spring-iBatis Ver.", listUrl = "/com/ext/jstree/springiBatis/core/getJsTreeView.do", order = 3320, gid = 313)
-	@RequestMapping("/getJsTreeView.do")
-	public String jsTreespringiBatis() {
-		return "egovframework/com/ext/jstree/springiBatisVersion";
-	}
-	
-	@IncludedInfo(name = "DWR-Chat Ver.", listUrl = "/html/egovframework/com/ext/jstree/dwr/index.html", order = 3330, gid = 313)
-	@RequestMapping("/getDWRChat.do")
-	public String jsTreeDWRChat() {
-		return "html page not support";
-	}
-	
-	@IncludedInfo(name = "jsTree Spring-DWR", listUrl = "/com/ext/jstree/springiBatis/core/getDWRView.do", order = 3340, gid = 313)
-	@RequestMapping("/getDWRView.do")
-	public String jsTreeSpringDWR() {
-		return "egovframework/com/ext/jstree/springDWRVersion";
-	}
-
 	@ResponseBody
 	@RequestMapping(value="/getChildNode.do", method=RequestMethod.GET)
 	public ModelAndView getChildNode(ComprehensiveTree comprehensiveTree, ModelMap model,
