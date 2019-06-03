@@ -5,7 +5,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>19.04.06</version>
+        <version>19.06.02</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -373,7 +373,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>ccv
+            <version>4.11</version>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
