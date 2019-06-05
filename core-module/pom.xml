@@ -31,7 +31,7 @@
         <dependency>
             <groupId>313devgrp</groupId>
             <artifactId>lib-module</artifactId>
-            <version>19.06.02</version>
+            <version>19.06.03</version>
             <type>pom</type>
         </dependency>
         <dependency>
