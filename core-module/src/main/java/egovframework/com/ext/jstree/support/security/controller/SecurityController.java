@@ -1,6 +1,8 @@
 package egovframework.com.ext.jstree.support.security.controller;
 
 import egovframework.com.ext.jstree.support.mvc.GenericAbstractController;
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,6 +15,8 @@ import java.io.IOException;
 @Controller
 @RequestMapping(value = {"/api/jsTreeServiceFramework/security"})
 public class SecurityController extends GenericAbstractController {
+
+    public static final String DEFAULT_CSRF_TOKEN_ATTR_NAME = HttpSessionCsrfTokenRepository.class.getName().concat(".CSRF_TOKEN");
 
     @RequestMapping("/csrf.do")
     public String jsTreeCSRFtoJson() {
@@ -27,8 +31,10 @@ public class SecurityController extends GenericAbstractController {
             token = request.getHeader("X-CSRF-TOKEN");
         }
 
+        CsrfToken sessionToken = (CsrfToken) request.getSession().getAttribute(DEFAULT_CSRF_TOKEN_ATTR_NAME);
+
         ModelAndView modelAndView = new ModelAndView("jsonView");
-        modelAndView.addObject("result", token);
+        modelAndView.addObject("result", sessionToken.getToken().toString());
         return modelAndView;
     }
 
