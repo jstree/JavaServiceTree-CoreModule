@@ -34,9 +34,7 @@ public class LocalUserDetailService implements UserDetailsService {
         }
 
         User user = userDao.get(userId);
-        if (user == null) {
-            return null;
-        }
+
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = buildSimpleGrantedAuthorities(user);
         return new LocalUser(user.getUserId(), user.getName(), user.getPassword(), user.getActive() == 1 ? true : false, true
                 , true, true, simpleGrantedAuthorities);
