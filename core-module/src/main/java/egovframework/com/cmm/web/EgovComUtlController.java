@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class EgovComUtlController {
 
-    //@Resource(name = "egovUserManageService")
-    //private EgovUserManageService egovUserManageService;
 
     @Resource(name = "propertiesService")
     protected EgovPropertyService propertiesService;
@@ -29,16 +27,6 @@ public class EgovComUtlController {
 			link="egovframework/com/cmm/egovError";
 		}
 		return link;
-	}
-	
-    @RequestMapping(value="/EgovModal.do")
-    public String selectUtlJsonInquire()  throws Exception {
-        return "egovframework/com/cmm/EgovModal";
-    }
-    
-	@RequestMapping("/validator.do")
-	public String validate(){
-		return "egovframework/com/cmm/validator";
 	}
 
 }

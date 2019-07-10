@@ -1,6 +1,7 @@
 package egovframework.com.cmm.web;
 
 import egovframework.com.cmm.IncludedCompInfoVO;
+import egovframework.com.ext.jstree.support.util.ParameterParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -9,8 +10,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
@@ -30,9 +36,13 @@ public class EgovComIndexController implements ApplicationContextAware, Initiali
 		LOGGER.info("EgovComIndexController setApplicationContext method has called!");
 	}
 
-	@RequestMapping("/index.do")
-	public String index(ModelMap model) {
-		return "/";
+	@ResponseBody
+	@RequestMapping(value = "/index.do")
+	public ModelAndView index(ModelMap model, HttpServletRequest request) throws Exception {
+
+		ModelAndView modelAndView = new ModelAndView("jsonView");
+		modelAndView.addObject("result", "jsTree Service Framework is not support frontside page");
+		return modelAndView;
 	}
 
 }
