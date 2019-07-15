@@ -18,22 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class PagesController {
 
-    @RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
-    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "Login Page");
-        model.setViewName("egovframework/com/ext/jstree/support/security/login");
-        return model;
-    }
-
+    @ResponseBody
     @RequestMapping(value = {"/userpage"}, method = { RequestMethod.GET, RequestMethod.POST })
     public ModelAndView userPage() {
-
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "Spring security social login Hello World");
-        model.addObject("user", getUser());
-        model.setViewName("egovframework/com/ext/jstree/support/security/user");
-        return model;
+        ModelAndView modelAndView = new ModelAndView("jsonView");
+        modelAndView.addObject("user", getUser());
+        return modelAndView;
     }
 
     @ResponseBody
