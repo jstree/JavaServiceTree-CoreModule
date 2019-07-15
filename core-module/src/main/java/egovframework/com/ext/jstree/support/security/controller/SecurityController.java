@@ -20,7 +20,6 @@ public class SecurityController extends GenericAbstractController {
     @RequestMapping(value = {"/csrf.do"}, method = { RequestMethod.GET, RequestMethod.POST })
     public ModelAndView jsTreeCSRFtoJson(HttpSession session, ModelMap model, HttpServletRequest request) throws Exception {
         CsrfToken token = (CsrfToken) session.getAttribute("HttpSessionCsrfTokenRepository.CSRF_TOKEN");
-        //return "egovframework/com/ext/jstree/csrf";
         ModelAndView modelAndView = new ModelAndView("jsonView");
         modelAndView.addObject("result", token.getToken());
         return modelAndView;
