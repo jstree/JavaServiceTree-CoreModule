@@ -55,7 +55,7 @@ public abstract class GenericAbstractController {
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", 0);
+		map.put("status", "Exception Catch");
 		Gson gson = new GsonBuilder().serializeNulls().create();
                 out.println(gson.toJson(map));
                 out.flush();
