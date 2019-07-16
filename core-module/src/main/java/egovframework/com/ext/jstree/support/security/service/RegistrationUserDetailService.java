@@ -47,9 +47,9 @@ public class RegistrationUserDetailService implements egovframework.com.ext.jstr
 
     private User buildUser(final UserRegistrationForm formDTO) {
         User user = new User();
-        user.setUserId(formDTO.getUserId());
+        user.setUserId(formDTO.getEmail());
         user.setEmailId(formDTO.getEmail());
-        user.setName(formDTO.getFirstName());
+        user.setName("local user");
         user.setPassword(passwordEncoder.encode(formDTO.getPassword()));
         final HashSet<Role> roles = new HashSet<Role>();
         Role role = new Role();
