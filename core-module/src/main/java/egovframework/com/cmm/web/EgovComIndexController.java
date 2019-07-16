@@ -29,7 +29,7 @@ public class EgovComIndexController implements ApplicationContextAware, Initiali
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/index.do")
 	public ModelAndView index(ModelMap model, HttpServletRequest request) throws Exception {
 		ModelAndView modelAndView = new ModelAndView("jsonView");
 		modelAndView.addObject("result", "jsTree Service Framework is not support frontside page");
