@@ -1,8 +1,7 @@
 package egovframework.com.ext.jstree.support.security.controller;
 
-import com.google.gson.JsonObject;
 import egovframework.com.ext.jstree.support.mvc.GenericAbstractController;
-import org.codehaus.jettison.json.JSONObject;
+import org.json.simple.JSONObject;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
