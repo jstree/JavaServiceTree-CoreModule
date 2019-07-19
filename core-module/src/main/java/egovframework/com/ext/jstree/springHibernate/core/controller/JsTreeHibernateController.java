@@ -14,7 +14,6 @@ package egovframework.com.ext.jstree.springHibernate.core.controller;
 import com.google.common.collect.Maps;
 import egovframework.com.ext.jstree.springHibernate.core.service.JsTreeHibernateService;
 import egovframework.com.ext.jstree.springHibernate.core.util.Util_TitleChecker;
-import egovframework.com.ext.jstree.springHibernate.core.validation.group.*;
 import egovframework.com.ext.jstree.springHibernate.core.vo.JsTreeHibernateDTO;
 import egovframework.com.ext.jstree.support.mvc.GenericAbstractController;
 import egovframework.com.ext.jstree.support.util.ParameterParser;
@@ -25,7 +24,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -102,7 +100,7 @@ public class JsTreeHibernateController extends GenericAbstractController {
 
     @ResponseBody
     @RequestMapping(value = "/addNode.do", method = RequestMethod.POST)
-    public ModelAndView addNode(@Validated(value = AddNode.class) JsTreeHibernateDTO jsTreeHibernateDTO,
+    public ModelAndView addNode(JsTreeHibernateDTO jsTreeHibernateDTO,
                                 BindingResult bindingResult, ModelMap model) throws Exception {
         if (bindingResult.hasErrors())
             throw new RuntimeException();
@@ -116,7 +114,7 @@ public class JsTreeHibernateController extends GenericAbstractController {
 
     @ResponseBody
     @RequestMapping(value = "/removeNode.do", method = RequestMethod.POST)
-    public ModelAndView removeNode(@Validated(value = RemoveNode.class) JsTreeHibernateDTO jsTreeHibernateDTO,
+    public ModelAndView removeNode(JsTreeHibernateDTO jsTreeHibernateDTO,
                                    BindingResult bindingResult, ModelMap model) throws Exception {
         if (bindingResult.hasErrors())
             throw new RuntimeException();
@@ -141,7 +139,7 @@ public class JsTreeHibernateController extends GenericAbstractController {
 
     @ResponseBody
     @RequestMapping(value = "/alterNode.do")
-    public ModelAndView alterNode(@Validated(value = AlterNode.class) JsTreeHibernateDTO jsTreeHibernateDTO,
+    public ModelAndView alterNode(JsTreeHibernateDTO jsTreeHibernateDTO,
                                   BindingResult bindingResult, ModelMap model) throws Exception {
         if (bindingResult.hasErrors()) {
             throw new RuntimeException();
@@ -159,7 +157,7 @@ public class JsTreeHibernateController extends GenericAbstractController {
 
     @ResponseBody
     @RequestMapping(value = "/alterNodeType.do", method = RequestMethod.POST)
-    public ModelAndView alterNodeType(@Validated(value = AlterNodeType.class) JsTreeHibernateDTO jsTreeHibernateDTO,
+    public ModelAndView alterNodeType(JsTreeHibernateDTO jsTreeHibernateDTO,
                                       BindingResult bindingResult, ModelMap model) throws Exception {
         if (bindingResult.hasErrors()) {
             throw new RuntimeException();
@@ -174,7 +172,7 @@ public class JsTreeHibernateController extends GenericAbstractController {
 
     @ResponseBody
     @RequestMapping(value = "/moveNode.do", method = RequestMethod.POST)
-    public ModelAndView moveNode(@Validated(value = MoveNode.class) JsTreeHibernateDTO jsTreeHibernateDTO,
+    public ModelAndView moveNode(JsTreeHibernateDTO jsTreeHibernateDTO,
                                  BindingResult bindingResult, ModelMap model, HttpServletRequest request) throws Exception {
         if (bindingResult.hasErrors())
             throw new RuntimeException();
