@@ -21,16 +21,9 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/signup", method = RequestMethod.GET)
-    public ModelAndView signup(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-        ModelAndView model = new ModelAndView();
-        model.addObject("title", "User Registration Form");
-        model.setViewName("egovframework/com/ext/jstree/support/security/registration");
-        return model;
-    }
-
-    @RequestMapping(value = {"/user/register"}, method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-    public @ResponseBody String registerUser(@RequestBody UserRegistrationForm registrationForm) throws UserAlreadyExistAuthenticationException {
+    @ResponseBody
+    @RequestMapping(value = {"/services/user/register"}, consumes = "application/json", produces = "application/json")
+    public ModelAndView registerUser(@RequestBody UserRegistrationForm registrationForm) throws UserAlreadyExistAuthenticationException {
 
         if (registrationForm.getUserId() == null) {
             registrationForm.setUserId(registrationForm.getUserId());
@@ -38,7 +31,10 @@ public class RegistrationController {
 
         LocalUser localUser = (LocalUser) userService.registerNewUser(registrationForm);
 
-       return "success";
+        ModelAndView modelAndView = new ModelAndView("jsonView");
+        modelAndView.addObject("result", "success");
+        return modelAndView;
+
 
     }
 }
