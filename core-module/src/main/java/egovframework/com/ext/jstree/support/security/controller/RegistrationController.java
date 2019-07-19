@@ -21,9 +21,8 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
-    @ResponseBody
-    @RequestMapping(value = {"/services/user/register"}, consumes = "application/json", produces = "application/json")
-    public ModelAndView registerUser(@RequestBody UserRegistrationForm registrationForm) throws UserAlreadyExistAuthenticationException {
+    @RequestMapping(value = {"/user/register"}, method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    public @ResponseBody String registerUser(@RequestBody UserRegistrationForm registrationForm) throws UserAlreadyExistAuthenticationException {
 
         if (registrationForm.getUserId() == null) {
             registrationForm.setUserId(registrationForm.getUserId());
@@ -31,10 +30,7 @@ public class RegistrationController {
 
         LocalUser localUser = (LocalUser) userService.registerNewUser(registrationForm);
 
-        ModelAndView modelAndView = new ModelAndView("jsonView");
-        modelAndView.addObject("result", "success");
-        return modelAndView;
-
+       return "success";
 
     }
 }
