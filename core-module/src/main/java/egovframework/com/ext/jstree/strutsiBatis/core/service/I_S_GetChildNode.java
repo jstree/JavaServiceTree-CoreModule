@@ -13,8 +13,8 @@ public interface I_S_GetChildNode extends
 
 	public void setRequest(HttpServletRequest request);
 	
-	public List<T_ComprehensiveTree> getChildNode( P_ComprehensiveTree p_ComprehensiveTree);
+	public List<T_ComprehensiveTree> getChildNode(P_ComprehensiveTree p_ComprehensiveTree);
 
-	public List<T_ComprehensiveTree> getChildNodeByLeftRight( P_ComprehensiveTree p_ComprehensiveTree);
+	public List<T_ComprehensiveTree> getChildNodeByLeftRight(P_ComprehensiveTree p_ComprehensiveTree);
 
 }

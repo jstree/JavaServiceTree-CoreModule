@@ -41,12 +41,12 @@ public class User implements Serializable{
             joinColumns = @JoinColumn(name = "USER_ID"),
             inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
-    private Set<egovframework.com.ext.jstree.support.security.database.model.Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
     }
 
-    public User(final String userId, final String name, final String password, final String emailId, final Integer active, final String provider, final Set<egovframework.com.ext.jstree.support.security.database.model.Role> roles) {
+    public User(final String userId, final String name, final String password, final String emailId, final Integer active, final String provider, final Set<Role> roles) {
         this.userId = userId;
         this.name = name;
         this.password = password;
@@ -88,11 +88,11 @@ public class User implements Serializable{
         this.active = active;
     }
 
-    public Set<egovframework.com.ext.jstree.support.security.database.model.Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(final Set<egovframework.com.ext.jstree.support.security.database.model.Role> roles) {
+    public void setRoles(final Set<Role> roles) {
         this.roles = roles;
     }
 

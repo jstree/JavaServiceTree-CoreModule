@@ -8,12 +8,12 @@ public class UserRegistrationForm {
     private String phoneno;
     private String email;
     private String password;
-    private egovframework.com.ext.jstree.support.security.dto.SocialProvider socialProvider;
+    private SocialProvider socialProvider;
 
     public UserRegistrationForm() {
     }
 
-    public UserRegistrationForm(final String userId, final String firstName, final String lastName, final String phoneno, final String email, final String password, final egovframework.com.ext.jstree.support.security.dto.SocialProvider socialProvider) {
+    public UserRegistrationForm(final String userId, final String firstName, final String lastName, final String phoneno, final String email, final String password, final SocialProvider socialProvider) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,11 +75,11 @@ public class UserRegistrationForm {
         this.phoneno = phoneno;
     }
 
-    public egovframework.com.ext.jstree.support.security.dto.SocialProvider getSocialProvider() {
+    public SocialProvider getSocialProvider() {
         return socialProvider;
     }
 
-    public void setSocialProvider(final egovframework.com.ext.jstree.support.security.dto.SocialProvider socialProvider) {
+    public void setSocialProvider(final SocialProvider socialProvider) {
         this.socialProvider = socialProvider;
     }
 
@@ -90,7 +90,7 @@ public class UserRegistrationForm {
         private String phoneno;
         private String email;
         private String password;
-        private egovframework.com.ext.jstree.support.security.dto.SocialProvider socialProvider;
+        private SocialProvider socialProvider;
 
         public Builder addUserId(final String userId) {
             this.userId = userId;
@@ -122,7 +122,7 @@ public class UserRegistrationForm {
             return this;
         }
 
-        public Builder addSocialProvider(final egovframework.com.ext.jstree.support.security.dto.SocialProvider socialProvider) {
+        public Builder addSocialProvider(final SocialProvider socialProvider) {
             this.socialProvider = socialProvider;
             return this;
         }

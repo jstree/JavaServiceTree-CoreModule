@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 
 @Service("registrationUserDetailService")
-public class RegistrationUserDetailService implements egovframework.com.ext.jstree.support.security.service.UserService {
+public class RegistrationUserDetailService implements UserService {
 
     @Autowired
     @Qualifier(value = "localUserDetailService")
