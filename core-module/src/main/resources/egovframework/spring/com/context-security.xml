@@ -52,7 +52,6 @@
 
 	<security:http pattern="/dwr/**" security="none"/>
 	<!-- Anyone can access these urls -->
-	<security:http pattern="/images/**" security="none"/>
 	<security:http pattern="/services/accessdenied" security="none"/>
 	<security:http pattern="/services/signup" security="none"/>
 	<security:http pattern="/services/user/register" security="none"/>
