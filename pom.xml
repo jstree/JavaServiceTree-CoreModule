@@ -69,10 +69,10 @@
     </ciManagement>
     <scm>
         <connection>
-            scm:git:https://github.com/jstree/jsTree-Service-Framework-Backend-App/tree/master
+            scm:git:https://github.com/jstree/JavaServiceTree-CoreModule/tree/master
         </connection>
-        <url>scm:git:https://github.com/jstree</url>
-        <developerConnection>scm:git:https://github.com/jstree</developerConnection>
+        <url>scm:git:https://github.com/jstree/JavaServiceTree-CoreModule</url>
+        <developerConnection>scm:git:https://github.com/jstree/JavaServiceTree-CoreModule</developerConnection>
     </scm>
 
     <!-- 프로젝트 메일링 리스트 -->
@@ -89,8 +89,8 @@
     <!-- 라이센스 정보 -->
     <licenses>
         <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <name>The GNU Lesser General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
         </license>
     </licenses>
 
@@ -201,7 +201,7 @@
         </snapshotRepository>
         <site>
             <id>StandardProject-Site-Public</id>
-            <url>ftp://www.313.co.kr/web/analysis</url>
+            <url>ftp://www.313.co.kr/web/TSF/analysis</url>
         </site>
     </distributionManagement>
 
