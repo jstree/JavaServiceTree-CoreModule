@@ -162,8 +162,7 @@ public abstract class JsTreeHibernateSearchDTO extends JsTreeHibernatePaginatedD
 			return;
 		}
 
-			setWhere(propertyName, value);
-s
+		setWhere(propertyName, value);
 	}
 
 	@Transient
