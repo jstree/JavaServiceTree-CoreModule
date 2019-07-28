@@ -201,7 +201,7 @@
         </snapshotRepository>
         <site>
             <id>StandardProject-Site-Public</id>
-            <url>ftp://www.313.co.kr/web/TSF/analysis</url>
+            <url>ftp://www.313.co.kr/web/analysis/TSF</url>
         </site>
     </distributionManagement>
 

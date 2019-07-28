@@ -2,7 +2,6 @@ package egovframework.com.ext.jstree.springHibernate.core.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import egovframework.com.ext.jstree.support.util.StringUtils;
-import egovframework.com.ext.jstree.support.util.Text;
 import org.hibernate.criterion.*;
 
 import javax.persistence.Transient;
@@ -163,17 +162,8 @@ public abstract class JsTreeHibernateSearchDTO extends JsTreeHibernatePaginatedD
 			return;
 		}
 
-		boolean flag = Text.isIpv4(value);
-		if (flag) {
-			long[] ipLong = Text.ipToLong2(value);
-			criterions.add(Restrictions.or(
-					Restrictions.eq(propertyName, value),
-					Restrictions.and(Restrictions.le(propertyIpStartName, ipLong[0]),
-							Restrictions.ge(propertyIpEndName, ipLong[1]))));
-		} else {
 			setWhere(propertyName, value);
-		}
-
+s
 	}
 
 	@Transient
