@@ -19,7 +19,7 @@
  ************************************************************************************************
 -->
 
-<beans profile="session">  
+<beans>
 	<!--인증된 유저의 LoginVO, 권한, 인증 여부를 확인 할 수있는 서비스 클래스-->
 	<bean id="egovUserDetailsHelper" class="egovframework.com.cmm.util.EgovUserDetailsHelper">
         <property name="egovUserDetailsService">
@@ -32,16 +32,5 @@
     <bean id="egovUserDetailsSessionService" class="egovframework.com.cmm.service.impl.EgovUserDetailsSessionServiceImpl"/>
 </beans>
 
-<beans profile="security">  
-	<!--인증된 유저의 LoginVO, 권한, 인증 여부를 확인 할 수있는 서비스 클래스-->
-	<bean id="egovUserDetailsHelper" class="egovframework.com.cmm.util.EgovUserDetailsHelper">
-        <property name="egovUserDetailsService">
-        	<!-- 원하는 bean id를 아래에 ref 태그에 적용한다 -->
-            <ref bean="egovUserDetailsSecurityService" />
-        </property>
-    </bean>
-    <!-- 2. 스프링 시큐리티를 이용한 인증을 사용할 빈 -->
-    <bean id="egovUserDetailsSecurityService" class="egovframework.com.sec.ram.service.impl.EgovUserDetailsSecurityServiceImpl"/>
-</beans>
 
 </beans>
