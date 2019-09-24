@@ -197,10 +197,10 @@ public class JsTreeHibernateServiceImpl implements JsTreeHibernateService {
 
 	/**
 	 * 파라미터로 넘겨진 인스턴스의 정보를 이용해 리플렉션하여 새로운 인스턴스를 만들어 반환한다.
-	 * 
-	 * @param comprehensiveTree
-	 *            리플렉션을 위한 타입 정보를 제공하기 위한 인스턴스
-	 * @return
+	 * 리플렉션을 위한 타입 정보를 제공하기 위한 인스턴스
+	 *
+	 * @param jsTreeHibernateDTO
+	 * @return T extends JsTreeHibernateSearchDTO
 	 * @throws ClassNotFoundException
 	 * @throws InstantiationException
 	 * @throws IllegalAccessException
