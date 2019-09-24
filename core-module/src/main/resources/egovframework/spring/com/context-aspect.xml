@@ -21,9 +21,11 @@
 		</property>
 	</bean>
 
+	<bean id="antPathMatcher" class="org.springframework.util.AntPathMatcher" />
+
 	<bean id="defaultExceptionHandleManager" class="egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager">
 		<property name="reqExpMatcher">
-			<ref bean="egov.antPathMater"/>
+			<ref bean="antPathMatcher"/>
 		</property>
 		<property name="patterns">
 			<list>
@@ -39,7 +41,7 @@
 
 	<bean id="otherExceptionHandleManager" class="egovframework.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager">
 		<property name="reqExpMatcher">
-			<ref bean="egov.antPathMater"/>
+			<ref bean="antPathMatcher"/>
 		</property>
 		<property name="patterns">
 			<list>

@@ -39,9 +39,12 @@
 			</list>
 		</property>
 	</bean>
+
+	<bean id="egov.antPathMatcher" class="org.springframework.util.AntPathMatcher" />
+
 	<bean id="egov.traceHandlerService" class="egovframework.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager">
 		<property name="reqExpMatcher">
-			<ref bean="egov.antPathMater" />
+			<ref bean="egov.antPathMatcher" />
 		</property>
 		<property name="patterns">
 			<list>
@@ -54,7 +57,7 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="egov.antPathMater" class="org.springframework.util.AntPathMatcher" />
+
 	<bean id="egov.defaultTraceHandler" class="egovframework.rte.fdl.cmmn.trace.handler.DefaultTraceHandler" />
 
 	<!-- MULTIPART RESOLVERS -->
