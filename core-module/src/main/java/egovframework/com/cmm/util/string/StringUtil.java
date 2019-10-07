@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import kr.co.shineware.util.common.model.Jaso;
-import kr.co.shineware.util.common.model.Syllable;
+import egovframework.com.cmm.util.model.Jaso;
+import egovframework.com.cmm.util.model.Syllable;
 
 /**
  * String과 관련된 Util 모음
