@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import kr.co.shineware.util.common.model.Pair;
+import egovframework.com.cmm.util.model.Pair;
 
 public class MapUtil {
 	
