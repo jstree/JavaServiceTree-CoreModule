@@ -23,6 +23,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>313devgrp</groupId>
+            <artifactId>jdownloader</artifactId>
+            <version>2.0.0</version>
+        </dependency>
         <!-- 실행환경 라이브러리 -->
         <!-- iBatis -->
         <dependency>
