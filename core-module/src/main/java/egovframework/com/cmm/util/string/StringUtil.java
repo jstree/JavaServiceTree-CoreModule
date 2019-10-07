@@ -8,11 +8,6 @@ import java.util.List;
 import egovframework.com.cmm.util.model.Jaso;
 import egovframework.com.cmm.util.model.Syllable;
 
-/**
- * String과 관련된 Util 모음
- * @author jsshin
- *
- */
 public class StringUtil {
 	public static char[] ChoSung = { 0x3131, 0x3132, 0x3134, 0x3137, 0x3138,
 		0x3139, 0x3141, 0x3142, 0x3143, 0x3145, 0x3146, 0x3147, 0x3148,
@@ -25,12 +20,6 @@ public class StringUtil {
 		0x313e, 0x313f, 0x3140, 0x3141, 0x3142, 0x3144, 0x3145, 0x3146,
 		0x3147, 0x3148, 0x314a, 0x314b, 0x314c, 0x314d, 0x314e };
 
-	/**
-	 * 입력된 source를 spliter 기준으로 분할
-	 * @param source
-	 * @param spliter
-	 * @return
-	 */
 	public static List<String> split(String source, String spliter){
 		List<String> splitedList = new ArrayList<String>();
 		StringBuffer sb = new StringBuffer(source);
@@ -51,15 +40,6 @@ public class StringUtil {
 		return splitedList;
 	}
 
-	/**
-	 * 입력된 문장을 ngram List 형태로 반환
-	 * 띄어쓰기를 포함하여 ngram을 생성함
-	 * @param str 입력 문장
-	 * @param n ngram에서 n의 개수
-	 * @param begin 시작 기호 설정 (Can be null)
-	 * @param end 끝나는 기호 설정 (Can be null)
-	 * @return
-	 */
 	public static List<String> ngram(String str,int n,String begin,String end){
 
 		List<String> ngramList = new ArrayList<String>();
@@ -85,17 +65,6 @@ public class StringUtil {
 		return ngramList;
 	}
 
-	/**
-	 * 입력된 문장을 Jaso 리스트로 변환
-	 * 
-	 * 종성이 없으면 x로 변환
-	 * ex : 가 -> ㄱ,ㅏ,x
-	 * 
-	 * 입력 문장 중 음절 정보가 부정확한 경우 자소 타입을 ETC로 반환
-	 * ex : ㅋ,ㅏ,a,b 등
-	 * @param str
-	 * @return
-	 */
 	public static List<Jaso> korean2JasoList(String str) {
 		int length = str.length();		
 		List<Jaso> jasoList = new ArrayList<Jaso>();
@@ -132,11 +101,6 @@ public class StringUtil {
 		return jasoList;
 	}
 
-	/**
-	 * 자소리스트를 string으로 변환
-	 * @param jasoList
-	 * @return
-	 */
 	public static String restoreJasoList2Korean(List<Jaso> jasoList){
 		return restoreJasoList2Korean(0, jasoList.size()-1, jasoList);
 	}
@@ -186,11 +150,6 @@ public class StringUtil {
 		return koreanStr.toString();
 	}
 
-	/**
-	 * 입력된 ch가 한글인지 아닌지 판단
-	 * @param ch
-	 * @return
-	 */
 	public static boolean isKorean(char ch){
 		UnicodeBlock unicodeBlock = UnicodeBlock.of(ch);
 		if(UnicodeBlock.HANGUL_SYLLABLES == unicodeBlock ||
@@ -214,11 +173,6 @@ public class StringUtil {
 		return sb.toString();
 	}
 
-	/**
-	 * 입력된 ch가 영어인지 판단
-	 * @param ch
-	 * @return
-	 */
 	public static boolean isEnglish(char ch){
 		UnicodeBlock unicodeBlock = UnicodeBlock.of(ch);
 		if(unicodeBlock == UnicodeBlock.BASIC_LATIN){
@@ -229,11 +183,6 @@ public class StringUtil {
 		return false;		
 	}
 
-	/**
-	 * 입력된 ch가 일본어(카타카나, 카타카나 포네틱 확장, 히라가나)인지 판단
-	 * @param ch
-	 * @return
-	 */
 	public static boolean isJapanese(char ch){
 		UnicodeBlock unicodeBlock = UnicodeBlock.of(ch);
 		if(UnicodeBlock.KATAKANA.equals(unicodeBlock) 
@@ -244,11 +193,6 @@ public class StringUtil {
 		return false;
 	}
 
-	/**
-	 * 입력된 ch가 영어 외의 외국어인지 판단(히라가나, 카타카나, 한자)
-	 * @param ch
-	 * @return
-	 */
 	public static boolean isForeign(char ch){
 		UnicodeBlock unicodeBlock = UnicodeBlock.of(ch);
 		if(unicodeBlock == UnicodeBlock.HIRAGANA ||
@@ -259,11 +203,6 @@ public class StringUtil {
 		return false;
 	}
 
-	/**
-	 * 입력된 ch가 한자인지 판단
-	 * @param ch
-	 * @return
-	 */
 	public static boolean isChinese(char ch){
 		UnicodeBlock unicodeBlock = UnicodeBlock.of(ch);
 		if(UnicodeBlock.CJK_COMPATIBILITY.equals(unicodeBlock)				
@@ -276,21 +215,11 @@ public class StringUtil {
 		return false;
 	}
 
-	/**
-	 * 입력된 ch의 유니코드 블록 범위를 반환
-	 * @param ch
-	 * @return
-	 */
 	public static UnicodeBlock getUnicodeBlock(char ch){
 		return UnicodeBlock.of(ch);
 	}
 
-	/**
-	 * 입력된 ch가 숫자인지 아닌지 판단
-	 * @param ch
-	 * @return
-	 */
-	public static boolean isNumeric(char ch){				
+	public static boolean isNumeric(char ch){
 		if(Character.isDigit(ch)){
 			return true;
 		}
@@ -302,13 +231,6 @@ public class StringUtil {
 		return korean2JasoString(word, false);
 	}
 
-	/**
-	 * 입력된 word를 자소 스트링 형태로 반환
-	 * ex : "감기!" -> "ㄱㅏㅁㄱㅣx!"
-	 * @param word 변환할 스트링
-	 * @param fixJongsung 종성 고정 여부 선택. 종성이 없는 경우에는 x로 문자열 대치.
-	 * @return
-	 */
 	public static String korean2JasoString(String word,boolean fixJongsung){
 		String key = "";
 		for(int j=0;j<word.length();j++){
@@ -331,11 +253,6 @@ public class StringUtil {
 		return key;
 	}
 
-	/**
-	 * 입력된 한글 음절 ch를 음절 정보를 포함하는 Syllable로 변환
-	 * @param ch
-	 * @return
-	 */
 	public static Syllable hangul2Syllable(char ch){
 		int cho,jung,jong,tmp;
 		if(ch >= 0xAC00 && ch <=0xD7A3){
@@ -354,11 +271,6 @@ public class StringUtil {
 		return null;
 	}
 
-	/**
-	 * 입력된 jaso word를 스트링 형태로 반환
-	 * @param jasoWord
-	 * @return
-	 */
 	public static String restoreJasoword2Korean(String jasoWord){
 
 		StringBuilder sb = new StringBuilder();

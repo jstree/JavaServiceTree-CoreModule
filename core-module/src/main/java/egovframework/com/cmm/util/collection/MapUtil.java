@@ -16,12 +16,7 @@ public class MapUtil {
 	public static int ASCENDING_ORDER = 1;
 	public static int DESCENDING_ORDER = -1;
 	
-	/**
-	 * 맵의 키값을 리스트로 반환
-	 * @param map
-	 * @return List - 키 리스트
-	 */
-	public static <K, V> List<K> getKeyList(Map<K,V> map){		
+	public static <K, V> List<K> getKeyList(Map<K,V> map){
 		Iterator<K> it = map.keySet().iterator();
 		List<K> result = new ArrayList<K>();
 		while(it.hasNext()){
@@ -34,13 +29,7 @@ public class MapUtil {
 		return result;
 	}
 	
-	/**
-	 * 맵을 value로 소팅하여 다시 맵으로 리턴
-	 * @param map
-	 * @param order Input MapUtil.ASCENDING_ORDER or MapUtil.DESCENDIN_ORDER
-	 * @return Map
-	 */
-	public static <K, V extends Comparable<? super V>> Map<K, V> 
+	public static <K, V extends Comparable<? super V>> Map<K, V>
 	sortByValue( Map<K, V> map ,final int order)
 	{
 		List<Map.Entry<K, V>> list =
@@ -68,11 +57,6 @@ public class MapUtil {
 		return result;
 	}
 	
-	/**
-	 * 맵을 Key, Value Pair 형태의 리스트로 반환
-	 * @param map
-	 * @return List<Pair>
-	 */
 	public static <K, V> List<Pair<K,V>> getListPair(Map<K,V> map){
 		Iterator<K> it = map.keySet().iterator();
 		List<Pair<K,V>> result = new ArrayList<Pair<K,V>>();

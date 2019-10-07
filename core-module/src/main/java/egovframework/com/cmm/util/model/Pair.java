@@ -2,17 +2,8 @@ package egovframework.com.cmm.util.model;
 
 import java.io.Serializable;
 
-/**
- *
- *
- * @param <F> Object type of first value;
- * @param <S> Object type of second value;
- */
 public class Pair<F,S> implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private F first;
 	private S second;	
