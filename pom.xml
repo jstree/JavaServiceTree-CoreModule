@@ -102,7 +102,7 @@
         <profile>
             <id>operation</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <build.profile.id>operation</build.profile.id>
@@ -111,7 +111,7 @@
         <profile>
             <id>dev</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <build.profile.id>dev</build.profile.id>
