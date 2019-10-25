@@ -45,6 +45,15 @@
     <bean id="mntrngMessage" class="org.springframework.mail.SimpleMailMessage" 
         p:from="SYSTEM &lt; 아이디@gmail.com &gt;"   
         p:subject="{모니터링종류} 상태통보." 
-        p:text="* {모니터링종류}  상태통보.&#13;{에러내용}"/> 
+        p:text="* {모니터링종류}  상태통보.&#13;{에러내용}"/>
+
+    <!-- 메일 연동 인터페이스에서 첨부파일 사용 -->
+    <bean id="egovMultiPartEmail" class="egovframework.com.cop.ems.service.EgovMultiPartEmail"
+          p:host="STMP서버주소"
+          p:port="587"
+          p:id="아이디"
+          p:password="비밀번호"
+          p:senderName="System"
+          p:emailAddress="아이디@mail.com" />
 
 </beans> 
