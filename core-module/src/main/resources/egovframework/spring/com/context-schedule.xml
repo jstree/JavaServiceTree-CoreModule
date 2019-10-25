@@ -8,13 +8,7 @@
 
 	<!-- 해당 태그들은 크론탭을 설정에 필요한 태그들 -->
 	<task:scheduler id="jobScheduler" pool-size="10" />
-	<task:annotation-driven scheduler="jobScheduler" executor="taskExecutor" />
+    <task:executor id="threadPoolTaskExecutor" pool-size="5" queue-capacity="10" keep-alive="120"/>
+	<task:annotation-driven scheduler="jobScheduler" executor="threadPoolTaskExecutor" />
 
-    <!-- modify the parameters of thread pool -->
-    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
-        <property name="corePoolSize" value="5"/>
-        <property name="maxPoolSize" value="50"/>
-        <property name="queueCapacity" value="10"/>
-        <property name="keepAliveSeconds" value="120"/>
-    </bean>
 </beans>
