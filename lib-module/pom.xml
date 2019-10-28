@@ -847,6 +847,19 @@
             <version>1.4.180</version>
         </dependency>
 
+        <!-- Swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
         <!-- LDAP조직도관리 관련 라이브러리 -->
         <dependency>
             <groupId>org.springframework.ldap</groupId>
