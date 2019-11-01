@@ -829,11 +829,15 @@
             <artifactId>spring-social-google</artifactId>
             <version>1.0.0.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.12</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.3.4</version>
+            <version>4.5.10</version>
             <exclusions>
                 <exclusion>
                     <artifactId>commons-logging</artifactId>
