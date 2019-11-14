@@ -24,10 +24,11 @@ import com.google.gson.GsonBuilder;
 import egovframework.com.cmm.EgovMessageSource;
 import egovframework.com.ext.jstree.support.util.ParameterParser;
 
-public abstract class GenericAbstractController extends AbstractController {
+public abstract class GenericAbstractController{
 
 	@Resource(name = "egovMessageSource")
 	EgovMessageSource egovMessageSource;
+
 	@Autowired
 	private DefaultBeanValidator defaultBeanValidator;
 
