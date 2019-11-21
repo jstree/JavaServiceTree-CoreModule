@@ -52,6 +52,12 @@
             <version>1.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>1.5.24</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -165,7 +171,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <!-- scala assembly-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -181,6 +186,32 @@
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.kongchen</groupId>
+                <artifactId>swagger-maven-plugin</artifactId>
+                <version>1.1.2</version>
+                <configuration>
+                    <apiSources>
+                        <apiSource>
+                            <locations>egovframework.api,egovframework.api.internal.Resource</locations>
+                            <apiVersion>v1</apiVersion>
+                            <basePath>http://www.example.com</basePath>
+                            <outputTemplate>strapdown.html.mustache</outputTemplate>
+                            <outputPath>generated/strapdown.html</outputPath>
+                            <withFormatSuffix>false</withFormatSuffix>
+                            <swaggerDirectory>generated/apidocs</swaggerDirectory>
+                        </apiSource>
+                    </apiSources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
                         </goals>
                     </execution>
                 </executions>
