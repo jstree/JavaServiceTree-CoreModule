@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
             http://www.springframework.org/schema/mvc
@@ -11,7 +12,8 @@
     <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"></mvc:resources>
     <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"></mvc:resources>
 
-    <bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+    <bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl"
+          destroy-method="destroy">
         <property name="properties">
             <map>
                 <entry key="pageUnit" value="10"/>
@@ -22,4 +24,12 @@
         </property>
     </bean>
 
+    <ehcache:annotation-driven/>
+    <ehcache:config cache-manager="cacheManager">
+        <ehcache:evict-expired-elements interval="60"/>
+    </ehcache:config>
+
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="ehcache.xml"/>
+    </bean>
 </beans>	
