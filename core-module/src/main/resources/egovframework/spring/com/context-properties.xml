@@ -8,7 +8,7 @@
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc.xsd
             http://www.springframework.org/schema/cache
-            https://www.springframework.org/schema/cache/spring-cache.xsd">
+            http://www.springframework.org/schema/cache/spring-cache.xsd">
 
     <bean id="swagger2Config"
           class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration"></bean>
