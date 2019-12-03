@@ -27,8 +27,8 @@
         </property>
     </bean>
 
-    <cache:annotation-driven cache-manager="cacheManager"/>
-    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+    <cache:annotation-driven cache-manager="ehcacheManager"/>
+    <bean id="ehcacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
         <property name="cacheManager" ref="ehcache"/>
     </bean>
     <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
