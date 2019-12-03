@@ -5,7 +5,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>19.12.08</version>
+        <version>19.12.09</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -226,11 +226,6 @@
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-terracotta</artifactId>
             <version>2.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.googlecode.ehcache-spring-annotations</groupId>
-            <artifactId>ehcache-spring-annotations</artifactId>
-            <version>1.2.0</version>
         </dependency>
         <!-- cache end -->
 

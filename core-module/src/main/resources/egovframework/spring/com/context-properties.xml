@@ -2,13 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
             http://www.springframework.org/schema/mvc
-            http://www.springframework.org/schema/mvc/spring-mvc.xsd
-            http://www.springframework.org/schema/cache
-            http://www.springframework.org/schema/cache/spring-cache.xsd">
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <bean id="swagger2Config"
           class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration"></bean>
@@ -25,15 +22,6 @@
                 <entry key="tempPasswordCnsr" value="www313cokr"/>
             </map>
         </property>
-    </bean>
-
-    <cache:annotation-driven cache-manager="customEhCacheManager"/>
-    <bean id="customEhCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-        <property name="cacheManager" ref="customEhcacheManager"/>
-    </bean>
-    <bean id="customEhcacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-        <property name="configLocation" value="classpath:/ehcache.xml"/>
-        <property name="shared" value="true"/>
     </bean>
 
 </beans>
