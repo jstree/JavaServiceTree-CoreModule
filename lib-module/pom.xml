@@ -5,7 +5,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>19.12.05</version>
+        <version>19.12.06</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -740,6 +740,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
+            <version>${spring.maven.artifact.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
             <version>${spring.maven.artifact.version}</version>
         </dependency>
 
