@@ -27,11 +27,11 @@
         </property>
     </bean>
 
-    <cache:annotation-driven cache-manager="ehcacheManager"/>
-    <bean id="ehcacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-        <property name="cacheManager" ref="ehcache"/>
+    <cache:annotation-driven cache-manager="customEhCacheManager"/>
+    <bean id="customEhCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="customEhcacheManager"/>
     </bean>
-    <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+    <bean id="customEhcacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
         <property name="configLocation" value="classpath:/ehcache.xml"/>
         <property name="shared" value="true"/>
     </bean>
