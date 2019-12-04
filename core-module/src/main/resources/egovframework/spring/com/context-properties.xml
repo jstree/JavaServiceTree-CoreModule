@@ -24,8 +24,13 @@
         </property>
     </bean>
 
-    <bean id="customEhCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-        <property name="configLocation" value="classpath:customEhcache.xml"/>
+    <bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager">
+            <bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+                <property name="configLocation" value="classpath:customEhcache.xml"/>
+                <property name="shared" value="true"/>
+            </bean>
+        </property>
     </bean>
 
 </beans>
