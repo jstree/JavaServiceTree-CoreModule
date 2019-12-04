@@ -4,16 +4,6 @@
 
     <diskStore path="java.io.tmpdir" />
 
-    <defaultCache
-            maxElementsInMemory="1000"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            overflowToDisk="true"
-            diskPersistent="true"
-            memoryStoreEvictionPolicy="LRU"
-    />
-
     <!-- 사용하고자 하는 캐시 별 설정 -->
     <cache name="LocalCacheData"
            eternal="false"
