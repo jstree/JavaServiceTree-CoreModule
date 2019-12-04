@@ -1,5 +1,5 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         xsi:noNamespaceSchemaLocation="customEhcache.xsd"
          updateCheck="false" monitoring="autodetect" dynamicConfig="true" maxBytesLocalHeap="300M">
 
     <diskStore path="java.io.tmpdir" />

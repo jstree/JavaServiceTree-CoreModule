@@ -24,4 +24,8 @@
         </property>
     </bean>
 
+    <bean id="customEhCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:customEhcache.xml"/>
+    </bean>
+
 </beans>
