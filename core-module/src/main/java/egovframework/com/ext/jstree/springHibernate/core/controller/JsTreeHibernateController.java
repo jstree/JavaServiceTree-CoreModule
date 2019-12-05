@@ -18,10 +18,6 @@ import egovframework.com.ext.jstree.springHibernate.core.validation.group.*;
 import egovframework.com.ext.jstree.springHibernate.core.vo.JsTreeHibernateDTO;
 import egovframework.com.ext.jstree.support.mvc.GenericAbstractController;
 import egovframework.com.ext.jstree.support.util.ParameterParser;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,17 +37,12 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = {"/com/ext/jstree/springHibernate/core"})
-@Api(value = "JsTreeHibernateController", description = "jsTree Service Framework 하이버네이트 컨트롤러")
 public class JsTreeHibernateController extends GenericAbstractController {
 
     @Autowired
     @Qualifier("JsTreeHibernateService")
     private JsTreeHibernateService jsTreeHibernateService;
 
-    @ApiOperation(value = "게시판 등록")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "none", value = "자손 노드 가져오기", required = false, dataType = "none", paramType = "query", defaultValue = ""),
-    })
     @ResponseBody
     @RequestMapping(value = "/getChildNode.do", method = RequestMethod.GET)
     public ModelAndView getChildNode(JsTreeHibernateDTO jsTreeHibernateDTO, ModelMap model, HttpServletRequest request)
