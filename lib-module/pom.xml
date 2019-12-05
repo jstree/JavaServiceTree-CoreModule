@@ -5,7 +5,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>19.12.17</version>
+        <version>19.12.18</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -842,19 +842,6 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.180</version>
-        </dependency>
-
-        <!-- Swagger -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.6.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.6.1</version>
         </dependency>
 
         <!-- LDAP조직도관리 관련 라이브러리 -->
