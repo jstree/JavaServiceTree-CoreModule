@@ -7,7 +7,7 @@
     <parent>
         <groupId>313devgrp</groupId>
         <artifactId>jstree-project</artifactId>
-        <version>19.12.19</version>
+        <version>19.12.20</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>313devgrp</groupId>
             <artifactId>lib-module</artifactId>
-            <version>19.12.19</version>
+            <version>19.12.20</version>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -183,32 +183,6 @@
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.github.kongchen</groupId>
-                <artifactId>swagger-maven-plugin</artifactId>
-                <version>1.1.2</version>
-                <configuration>
-                    <apiSources>
-                        <apiSource>
-                            <locations>egovframework.api,egovframework.api.internal.Resource</locations>
-                            <apiVersion>v1</apiVersion>
-                            <basePath>http://www.example.com</basePath>
-                            <outputTemplate>strapdown.html.mustache</outputTemplate>
-                            <outputPath>generated/strapdown.html</outputPath>
-                            <withFormatSuffix>false</withFormatSuffix>
-                            <swaggerDirectory>generated/apidocs</swaggerDirectory>
-                        </apiSource>
-                    </apiSources>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>generate</goal>
                         </goals>
                     </execution>
                 </executions>
