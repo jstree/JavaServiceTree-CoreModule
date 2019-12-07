@@ -55,9 +55,13 @@ public class EgovComIndexController implements ApplicationContextAware, Initiali
 	@RequestMapping(value = "/index.do")
 	public ModelAndView index(ModelMap model, HttpServletRequest request) throws Exception {
 
-		ModelAndView modelAndView = new ModelAndView("jsonView");
-		modelAndView.addObject("result", includeInfoAnnotaion);
-		return modelAndView;
+		return getIndexModelAndView();
+	}
+
+	private ModelAndView getIndexModelAndView() {
+		ModelAndView modelview = new ModelAndView();
+		modelview.setViewName("index");
+		return modelview;
 	}
 
 	public void findAnnotatedClasses(String scanPackage) {
