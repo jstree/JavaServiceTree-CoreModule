@@ -2,12 +2,14 @@
          xsi:noNamespaceSchemaLocation="customEhcache.xsd"
          updateCheck="false" monitoring="autodetect" dynamicConfig="true" maxBytesLocalHeap="300M">
 
+    <diskStore path="java.io.tmpdir" />
+
     <!-- 사용하고자 하는 캐시 별 설정 -->
     <cache name="LocalEhCache"
            eternal="false"
            timeToIdleSeconds="0"
            timeToLiveSeconds="1200"
-           overflowToDisk="false"
+           overflowToDisk="true"
            diskPersistent="false"
            diskExpiryThreadIntervalSeconds="120"
            memoryStoreEvictionPolicy="LRU">
