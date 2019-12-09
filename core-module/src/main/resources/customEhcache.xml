@@ -9,8 +9,8 @@
            eternal="false"
            timeToIdleSeconds="0"
            timeToLiveSeconds="1200"
-           overflowToDisk="true"
-           diskPersistent="true"
+           overflowToDisk="false"
+           diskPersistent="false"
            diskExpiryThreadIntervalSeconds="120"
            memoryStoreEvictionPolicy="LRU">
     </cache>
