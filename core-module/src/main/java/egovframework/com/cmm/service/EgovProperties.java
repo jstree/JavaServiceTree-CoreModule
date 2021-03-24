@@ -35,7 +35,8 @@ public class EgovProperties {
 
 	public static String getPathProperty(String keyName) {
 		String value = "";
-		
+
+		System.out.println("GLOBALS_PROPERTIES_FILE ==>" + GLOBALS_PROPERTIES_FILE);
 		LOGGER.debug("getPathProperty : {} = {}", GLOBALS_PROPERTIES_FILE, keyName);
 		
 		FileInputStream fis = null;
