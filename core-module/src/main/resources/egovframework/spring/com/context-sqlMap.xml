@@ -5,7 +5,7 @@
 	<bean id="egov.propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:/egovframework/egovProps/globals.properties</value>
+				<value>classpath*:egovframework/egovProps/globals.properties</value>
 			</list>
 		</property>
 	</bean>
