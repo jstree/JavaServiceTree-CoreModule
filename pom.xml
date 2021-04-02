@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>313devgrp</groupId>
     <artifactId>jstree-project</artifactId>
-    <version>21.03.26</version>
+    <version>21.03.27</version>
     <packaging>pom</packaging>
 
     <name>jstree-project</name>
@@ -201,7 +201,7 @@
         </snapshotRepository>
         <site>
             <id>StandardProject-Site-Public</id>
-            <url>ftp://www.313.co.kr/web/analysis/TSF</url>
+            <url>ftp://www.313.co.kr/web/DeveloperPortal/TSF</url>
         </site>
     </distributionManagement>
 
