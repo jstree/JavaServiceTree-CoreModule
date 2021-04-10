@@ -7,7 +7,7 @@
 
 	<tx:annotation-driven />
 
-	<bean id="hibernateDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="onlyHibernateDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${database.driver}"></property>
 		<property name="url" value="${database.url}"></property>
 		<property name="username" value="${database.username}"></property>
@@ -16,7 +16,7 @@
 
 	<!-- ORM -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="hibernateDataSource" />
+		<property name="dataSource" ref="onlyHibernateDataSource" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
