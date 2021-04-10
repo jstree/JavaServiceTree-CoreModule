@@ -13,16 +13,9 @@
 	<!-- 실행환경에서 빈이름 참조(EgovAbstractDAO) -->
 	<bean id="egov.lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true" />
 
-	<bean id="egov.dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${database.driver}"></property>
-		<property name="url" value="${database.url}"></property>
-		<property name="username" value="${database.username}"></property>
-		<property name="password" value="${database.password}"></property>
-	</bean>
-
 	<!-- Mybatis setup for Mybatis Database Layer -->
 	<bean id="egov.sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="egov.dataSource"/>
+		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:/egovframework/sqlmap/config/sql-map-config.xml" />
 
 		<property name="mapperLocations">
